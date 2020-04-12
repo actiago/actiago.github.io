@@ -1,0 +1,59 @@
+---
+layout: post
+title:  'Docker compose + Jekyll'
+date:   2020-04-12 16:31:39 -0300
+categories: blog
+---
+
+## Uso do Docker compose no desenvolvimento do blog
+
+### Introdução
+
+Já pesquisei muito sobre qual a melhor plataforma para manter um blog, este debate já passou por rodas de amigos, sites e diversos outros canais. E, assim como outros assuntos, a resposta para essa pergunta veio de um clichê que todos conhecem: **"A melhor ferramenta é aquela que melhor atende a sua necessidade"**. Por isso eu escolhi o Jekyll.
+
+Escrevo isso porque já me recomendaram excelentes soluções para integrar meu blog com o Github, os orgumentos são muito plausíveis, o mais convincente é: _para usar o Jekyll é necessário instalar o Ruby em seu dispositivo_. Mas eu queria que meu blog utilizasse o Jekyll e ponto. Quando comecei o blog utilizava o Xubuntu, que já vem com o Ruby instalado, até aí não havia problemas.
+
+### Motivação/Problema
+
+Estava pronto para criar um novo post depois de meses sem criar conteúdo algum. Imaginando que o Manjaro também vinha o Ruby instalado por padrão, executei o comando:
+
+```bash
+ruby -v
+```
+
+Aí me deparei com o resultado
+
+```bash
+bash: ruby: command not found
+```
+
+Foi aí que pensei, _vou criar um novo post, mas não vou instalar o Ruby, não mesmo_.
+
+### Solução
+
+No mesmo instante dei uma _googleada_ no termo `jekyll docker` e me deparei com este repositório no Github [Jekyll-and-Docker-Compose](https://github.com/joeltennant/Jekyll-and-Docker-Compose). Analisei o conteúdo e resolvi ajustar o arquivo `docker-compose.yml` para meu ambiente.
+
+docker-compose.yml
+
+```yaml
+version: '3'
+
+services:
+  jekyll:
+    image: jekyll/jekyll:latest
+    command: jekyll serve --watch --force_polling --verbose
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/srv/jekyll
+    networks:
+      - jekyll
+
+networks:
+  jekyll:
+    external: true
+```
+
+### Conclusão
+
+A solução atendeu perfeitamente minha demanda de forma extremamente simples, sem que eu precisasse mudar de framework ou de distribuição.
