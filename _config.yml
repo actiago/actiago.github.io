@@ -1,19 +1,18 @@
-# Site settings
 title: Tiago Amaral
+url: 'https://actiago.github.io/'
+
 # email: tiagoamaralc@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Blog para compartilhamento de experiências pessoais no mundo da
   Tecnologia da Informação e outros assuntos que possam ser valiosos
   para mim.
 
-# avatar: https://avatars1.githubusercontent.com/u/3589952?s=400&u=d25e6b956a3f4a72d9d7277983e6ddb0b375e10e&v=4
+tagline: Sysadmin
+pic: favicon.png
 # baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://actiago.github.io" # the base hostname & protocol for your site
 # twitter_username:
-github_username:  actiago
+github_username: actiago
+telegram: https://t.me/tcego
 
 # Build settings
 markdown: kramdown
-
-# plugins:
-#  - jekyll-seo-tag
