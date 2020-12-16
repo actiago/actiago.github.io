@@ -41,3 +41,5 @@ old/
 
 # End of https://www.gitignore.io/api/git,linux,jekyll
 
+# VSCODE
+./vscode/*
