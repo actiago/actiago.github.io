@@ -11,4 +11,4 @@ Meu perfil no Github:
 
 E-mail: [tiagoamaralc@gmail.com](tiagoamaralc@gmail.com)
 
-Conheça minha banda [Incoma](https://youtube.com/incoma)
+Conheça minha banda Incoma - Canal oficial no Youtube: https://youtube.com/incoma
