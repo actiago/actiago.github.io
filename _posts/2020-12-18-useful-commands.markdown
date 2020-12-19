@@ -7,15 +7,19 @@ categories: blog
 
 # Comandos, configurações e utilitários que ajudam no dia-a-dia
 
+Alguns arquivos de configuração estão disponíveis no repositório [_dotfiles_](https://github.com/actiago/dotfiles)
+
+> Post atualizado constantemente.
+
 ## Nmap
 
-Lista hosts ativos na rede com Nmap
+Lista hosts ativos na rede.
 
 ```bash
 nmap $1 -n -sP 10.0.0.0/24 | grep report | awk '{print $5}'
 ```
 
-Lista IP e MAC ADDRESS dos hosts ativos na rede alvo
+Lista IP e MAC ADDRESS dos hosts ativos na rede
 
 ```
 sudo nmap -sP 10.0.0.0/24 | awk '/Nmap scan report for/{printf $5;}/MAC Address:/{print " => "$3;}' | sort
@@ -23,7 +27,17 @@ sudo nmap -sP 10.0.0.0/24 | awk '/Nmap scan report for/{printf $5;}/MAC Address:
 
 ## SSH
 
-Gerador de chaves SSH
+Gerador de chaves SSH. crie um arquivo de nome ```gerador_de_chaves.sh```.
+
+Utilizo este script para a criação de chaves diversas, principalmente para uso no _github_ e _gitlab_.
+
+1. Dê permissão de execução:
+
+```bash
+chmod +x gerador_de_chaves.sh
+```
+
+2. Adicione o script
 
 ```bash
 #!/usr/bin/env bash
@@ -36,13 +50,13 @@ ssh-keygen -t rsa -b 4096 -C "$KEYNAME" -f "/home/"$USER"/.ssh/id_rsa-$KEYNAME" 
 
 ## HTTP
 
-Faz um dump dos links de um determinado site
+Faz um dump dos links de um determinado site.
 
 ```bash
 lynx -listonly -dump www.sitealvo.com
 ```
 
-Teste seu loadbalancer
+Use o _curl_ para testar um loadbalancer.
 
 ```bash
 curl -vko /dev/null www.site.com
@@ -58,25 +72,25 @@ curl -sSIL http://172.29.0.2:5000
 
 Aliases para o arquivo ```.bashrc```
 
-Copia e grava um texto no cache
+Copia e grava um texto na área de transferência do sistema operacional.
 
 ```bash
 alias xc='xclip -sel clipboard'
 ```
 
-Comando pessoal - Parrot no alias do bash.rc
+**Comando pessoal** para momentos de caos e stress - Parrot [![Parrot](https://emoji.gg/assets/emoji/5892_parrot.gif)](https://emoji.gg/emoji/5892_parrot)
 
 ```bash
-alias parrot="curl parrot.live"
+alias parrot='curl parrot.live'
 ```
 
-Python VirtualEnvWrapper
+Python VirtualEnvWrapper.
 
 ```bash
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/home/tiago/.local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV=/home/$USER/.local/bin/virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
-source /home/tiago/.local/bin/virtualenvwrapper.sh
+source /home/$USER/.local/bin/virtualenvwrapper.sh
 ```
 
 ## Arquivos de configuração
@@ -142,11 +156,6 @@ map 0 ^
 map <Tab> :tabnext<cr>
 map <S-Tab> :tabprevious<cr>
 
-" Pathogen
-if filereadable(expand($HOME . "/.vim/autoload/pathogen.vim"))
-    execute pathogen#infect()
-endif
-
 " File syntax
 au BufNewFile,BufRead composer.lock set filetype=json
 au BufNewFile,BufRead docker-compose*.yml set filetype=yaml
@@ -155,3 +164,5 @@ au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au BufNewFile,BufRead *.textile set filetype=redminewiki
 au BufNewFile,BufRead *.tfstate set filetype=json
 ```
+
+> Como já proposto anteriormente, este post poderá sofer alterações.
