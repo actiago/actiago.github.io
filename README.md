@@ -1,9 +1,11 @@
 # actiago.github.io
 
-## Meu blog pessoal
+Meu blog pessoal.
 
 ## ToDo
 
+- [ ] Criar versão 2.0
+
 ## Licença
 
-[WTFPL](LICENSE).
+[MIT](LICENSE).
