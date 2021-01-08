@@ -24,7 +24,7 @@ Nos últimos anos tive a oportunidade de atuar em diversas frentes e de diversos
 
 # EXPERIÊNCIA PROFISSIONAL
 
-### Analista de Infraestrutura / Analista de sistemas - Grupo G10 - junho de 2019 até o momento (1 ano e 7 meses)
+**Analista de Infraestrutura / Analista de sistemas - Grupo G10 - junho de 2019 até o momento (1 ano e 7 meses)**
 
 **Atividades:**
 - Gerenciamento de serviços de infraestrutura (Redes e Datacenter)
@@ -47,7 +47,7 @@ Nos últimos anos tive a oportunidade de atuar em diversas frentes e de diversos
 
 **Resultados:** Atuação no time de infraestrurura na maior parte com a gestão de serviços, servidores, implantação deprojetos e desenvolvimento de soluções. Em conjunto de toda a equipe do departamento de Tecnologia da informação,migramos centenas de colaboradores para home office em tempo recorde com o menor impacto possível quando foinecessário agir de forma rápida em função do rápido avanço do COVID-19.Também atuei em frentes de projetos de redução de custos com infraestrutura on premise, migrando para a nuvem,implementação do Microsoft Office 365 e outros projetos.Devido todas essas experiências, fui convidado a atuar no time de sistemas, onde, hoje sou responsável pordesenvolver projetos de elaboração e implantação de novos sistemas internos em conjunto com um parceiro de desenvolvimento de sistemas e aplicativos e implantação de serviços requisitados por outras áreas estratégicas daempresa. Também sou responsável pela infraestrutura em cloud da AWS e hospedagem web.
 
-### Desenvolvedor de infraestrutura Jr. - Mandic Cloud Solutions / Rivendel - novembro de 2018 até maio de 2019 (6 meses)
+**Desenvolvedor de infraestrutura Jr. - Mandic Cloud Solutions / Rivendel - novembro de 2018 até maio de 2019 (6 meses)**
 
 **Atividades:**
 
@@ -62,7 +62,7 @@ Nos últimos anos tive a oportunidade de atuar em diversas frentes e de diversos
 
 **Resultados:** Fiz parte de um time que atendia 20 empresas de diversos segmentos, desde fintechs até grupostradicionais, ester time era responsável por desenvolver de forma contínua e sólida a entrega de recursos e aplicaçõesem cloud, disponibilizando os códigos aos times de TI do contratante e também era responsável por gerenciar/tercerizarserviços para clientes nos quais não tinham time de desenvolvimento interno.
 
-### Implantador de sistemas e consultoria - Buysoft - julho de 2017 até novembro de 2018 (1 ano e 4 meses)
+**Implantador de sistemas e consultoria - Buysoft - julho de 2017 até novembro de 2018 (1 ano e 4 meses)**
 
 **Atividades:**
 
@@ -73,7 +73,7 @@ Nos últimos anos tive a oportunidade de atuar em diversas frentes e de diversos
 
 **Resultados:** Participei do processo de criação do time de serviços ao cliente, este time era responsável por prestarconsultoria, implementação e gerenciamento de serviços de segurança da Kaspersky Lab e gestão da plataformaMicrosoft Office 365.Com esse time especializado e dedicado, foi possível entregar o melhor serviço e rentabilidade aos negócios daempresa.Este time proporcionou entregas satisfatórias aos clientes, uma vez os aproximamos dos fabricantes das tecnologiasnas quais confiaram sua empresa
 
-### Consultoria, suporte e implatador de sistemas - Adm de redes - RFC Sistemas - setembro de 2016 até julho de 2017 (10 meses)
+**Consultoria, suporte e implatador de sistemas - Adm de redes - RFC Sistemas - setembro de 2016 até julho de 2017 (10 meses)**
 
 **Atividades:**
 
