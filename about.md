@@ -13,6 +13,8 @@ Conheça minha banda Incoma - Canal oficial no Youtube: [https://youtube.com/inc
 
 ## Currículo
 
+## Síntese
+
 Nos últimos anos tive a oportunidade de atuar em diversas frentes e de diversos modelos de negócios,desde vendas especializadas, suporte N1, N2 e N3, implantação de sistemas, terceirização,desenvolvimento, até gestão de projetos de TI. Com essas experiências foi possível analisar erros e acertospara hoje aplicar de forma mais eficiênte para obtenção dos melhores resultados nos projetos nos quais souresponsável.
 
 ## Formação
