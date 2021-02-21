@@ -9,72 +9,66 @@ categories: blog
 
 > Conteúdo obtido através do vídeo [**DOMINANDO OS LOGS NO LINUX COM O JOURNALCTL (completo e super fácil)**](https://youtu.be/jT9yjpUYB-Y) do canal Linux Tips
 
-- Filtrando com _--since_
+Filtrando logs de 5 dias atrás com _--since_
 
-  * Filtrando logs de 5 dias atrás
+```bash
+journalctl --since "5 days ago"
+```
 
-    ```bash
-    journalctl --since "5 days ago"
-    ```
+Filtrando logs de 5 dias até 2 horas atrás
 
-  * Filtrando logs de 5 dias até 2 horas atrás
+```bash
+journalctl --since "5 days ago" --until "2 hours ago"
+```
 
-    ```bash
-    journalctl --since "5 days ago" --until "2 hours ago"
-    ```
+Filtrando logs dos dos últimos 30 minutos
 
-  * Filtrando logs dos dos últimos 30 minutos
+```bash
+journalctl --since "30 min ago"
+```
 
-    ```bash
-    journalctl --since "30 min ago"
-    ```
+Filtro por data
 
-  * Filtro por data
+```bash
+journalctl --since "2021-01-01 01:00:00" --until "2021-01-02 01:00:00"
+```
 
-    ```bash
-    journalctl --since "2021-01-01 01:00:00" --until "2021-01-02 01:00:00"
-    ```
+Filtrando últimas 10 linhas de logs do kernel
 
-- Consultando logs de um serviço específico
+```bash
+journalctl -k -n 10
+```
 
-  * Filtrando últimas 10 linhas de logs do kernel
+Filtrando por _unity_ (-u)
 
-    ```bash
-    journalctl -k -n 10
-    ```
+```bash
+journalctl -u nginx --since "2021-01-01 01:00:00" --until "2021-01-02 01:00:00"
+```
 
-  * Filtrando por _unity_ (-u)
+Filtrando com reverse (-r) e sort (-s) e com output (-o) em json
 
-    ```bash
-    journalctl -u nginx --since "2021-01-01 01:00:00" --until "2021-01-02 01:00:00"
-    ```
+Ex:
 
-- Filtrando com reverse (-r) e sort (-s) e com output (-o) em json
+```bash
+journalctl -u nginx --since "2021-01-01 01:00:00" --until "2021-01-02 01:00:00" -r -o json-pretty
+```
 
-  * Ex:
+Exemplo acima com adição de filtro de informação (-p)
 
-    ```bash
-    journalctl -u nginx --since "2021-01-01 01:00:00" --until "2021-01-02 01:00:00" -r -o json-pretty
-    ```
+```bash
+journalctl -u nginx --since "2021-01-01 01:00:00" --until "2021-01-02 01:00:00" -r -o json-pretty -p"err"
+```
 
-  * Exemplo acima com adição de filtro de informação (-p)
+Filtrando mensagens de emergência até mensagens de erro
 
-    ```bash
-    journalctl -u nginx --since "2021-01-01 01:00:00" --until "2021-01-02 01:00:00" -r -o json-pretty -p "err"
-    ```
+Ex:
 
--  Extra Filtrando mensagens de emergência até mensagens de erro
+```bash
+journalctl -u nginx --since "2021-01-01 01:00:00" --until "2021-01-02 01:00:00" -r -o json-pretty -p"emerg".."err"
+```
 
-    * Ex:
+Filtro por usuário
 
-    ```bash
-    journalctl -u nginx --since "2021-01-01 01:00:00" --until "2021-01-02 01:00:00" -r -o json-pretty -p "emerg".."err"
-    ```
-
-- Filtro por usuário
-
-    * Use o ID do usuário
-
-    ```bash
-    journtalctl _UID=1000
-    ```
+```bash
+journtalctl _UID=1000
+```
