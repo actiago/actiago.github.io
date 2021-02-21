@@ -5,7 +5,7 @@ date:   2020-04-12 16:31:39 -0300
 categories: blog
 ---
 
-## Uso do Docker compose no desenvolvimento do blog
+# Uso do Docker compose no desenvolvimento do blog
 
 ### Introdução
 
