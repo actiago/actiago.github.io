@@ -3,9 +3,7 @@ url: 'https://actiago.github.io/'
 
 # email: tiagoamaralc@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Blog para compartilhamento de experiências pessoais no mundo da
-  Tecnologia da Informação e outros assuntos que possam ser valiosos
-  para mim.
+  Blog pessoal onde compartilho e salvo conteúdo de uso diário.
 
 tagline: Sysadmin
 pic: favicon.png
