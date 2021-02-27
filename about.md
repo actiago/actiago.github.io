@@ -4,9 +4,11 @@ title: Sobre mim
 permalink: /about/
 ---
 
-Meu perfil no Github:
+Músico, sysadmin e entusiasta de vários assuntos
+
+Github:
 {% include icon-github.html username="actiago" %}
 
 E-mail: [me@tiag0.com.br](me@tiag0.com.br)
 
-Conheça minha banda Incoma - Canal oficial no Youtube: [https://youtube.com/incoma](https://youtube.com/incoma)
+Canal oficial no Youtube da minha banda, Incoma: [https://youtube.com/incoma](https://youtube.com/incoma)
