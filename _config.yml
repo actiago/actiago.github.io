@@ -1,7 +1,7 @@
 title: Tiago Amaral
 url: 'http://blog.tiag0.com.br/'
 
-# email: tiagoamaralc@gmail.com
+# email: me@tiag0.com.br
 description: > # this means to ignore newlines until "baseurl:"
   Blog pessoal onde compartilho e salvo conteúdo de uso diário.
 
@@ -10,7 +10,7 @@ pic: favicon.png
 # baseurl: "" # the subpath of your site, e.g. /blog
 # twitter_username:
 github_username: actiago
-telegram: https://t.me/tcego
+telegram: tcego
 
 # Build settings
 markdown: kramdown

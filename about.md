@@ -7,6 +7,6 @@ permalink: /about/
 Meu perfil no Github:
 {% include icon-github.html username="actiago" %}
 
-E-mail: [tiagoamaralc@gmail.com](tiagoamaralc@gmail.com)
+E-mail: [me@tiag0.com.br](me@tiag0.com.br)
 
 Conheça minha banda Incoma - Canal oficial no Youtube: [https://youtube.com/incoma](https://youtube.com/incoma)
