@@ -57,3 +57,6 @@ defaults:
       author_profile: true
       read_time: true
       comments: false
+
+twitter_username: actbot3
+github_username: actiago
