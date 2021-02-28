@@ -1,16 +1,61 @@
-title: Tiago Amaral
-url: 'http://tiag0.com.br/'
+locale: "en-US"
+url: 'https://blog.tiag0.com.br/'
 
-# email: me@tiag0.com.br
-description: > # this means to ignore newlines until "baseurl:"
-  Blog pessoal onde compartilho e salvo conteúdo de uso diário.
+title: "Blog | Tiago Amaral"
+title_separator: "-"
+name: "Tiago Amaral"
+logo: "/assets/images/logo.png"
+pic: "favicon.png"
+description: "Blog pessoal onde compartilho e salvo conteúdo de uso diário."
+tagline: "Sysadmin, blog, personal"
+words_per_minute: 200
+search: true
 
-tagline: Sysadmin
-pic: favicon.png
-# baseurl: "" # the subpath of your site, e.g. /blog
-twitter_username: actbot3
-github_username: actiago
-telegram: tcego
+author:
+    name: "Tiago Amaral"
+    location: "Maringá"
+    links:
+        - label: "Email"
+          icon: "fas fa-fw fa-envelope-square"
+          url: "me@tiag0.com.br"
+        - label: "Website"
+          icon: "fas fa-fw fa-link"
+          url: "https://www.tiag0.com.br"
+        - label: "Github"
+          icon: "fab fa-fw fa-github"
+          url: "https://github.com/actiago"
+
+footer:
+    links:
+        - label: "Website"
+          icon: "fas fa-fw fa-link"
+          url: "https://www.tiag0.com.br"
+        - label: "Github"
+          icon: "fab fa-fw fa-github"
+          url: "https://github.com/actiago"
+
+
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Build settings
 markdown: kramdown
+
+# Outputting
+permalink: /:categories/:title/
+paginate: 10 # amount of posts to show
+paginate_path: /page:num/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
