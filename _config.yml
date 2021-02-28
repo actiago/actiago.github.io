@@ -12,28 +12,27 @@ words_per_minute: 200
 search: true
 
 author:
-    name: "Tiago Amaral"
-    location: "Maringá"
-    links:
-        - label: "Email"
-          icon: "fas fa-fw fa-envelope-square"
-          url: "me@tiag0.com.br"
-        - label: "Website"
-          icon: "fas fa-fw fa-link"
-          url: "https://www.tiag0.com.br"
-        - label: "Github"
-          icon: "fab fa-fw fa-github"
-          url: "https://github.com/actiago"
+   name: "Tiago Amaral"
+   location: "Maringá"
+   links:
+     - label: "Email"
+       icon: "fas fa-fw fa-envelope-square"
+       url: "me@tiag0.com.br"
+     - label: "Website"
+       icon: "fas fa-fw fa-link"
+       url: "https://www.tiag0.com.br"
+     - label: "Github"
+       icon: "fab fa-fw fa-github"
+       url: "https://github.com/actiago"
 
 footer:
-    links:
-        - label: "Website"
-          icon: "fas fa-fw fa-link"
-          url: "https://www.tiag0.com.br"
-        - label: "Github"
-          icon: "fab fa-fw fa-github"
-          url: "https://github.com/actiago"
-
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.tiag0.com.br"
+    - label: "Github"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/actiago"
 
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
