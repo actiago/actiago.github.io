@@ -39,14 +39,7 @@ chmod +x gerador_de_chaves.sh
 
 2. Adicione o script
 
-```bash
-#!/usr/bin/env bash
-
-echo "Insira o nome da chave: "
-read KEYNAME
-
-ssh-keygen -t rsa -b 4096 -C "$KEYNAME" -f "/home/"$USER"/.ssh/id_rsa-$KEYNAME" -q
-```
+<script src="https://gist.github.com/actiago/ee1ca1e45a87ec69c4af36ef5ce6f53e.js"></script>
 
 ## HTTP
 
