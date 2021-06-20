@@ -199,4 +199,10 @@ au BufNewFile,BufRead *.textile set filetype=redminewiki
 au BufNewFile,BufRead *.tfstate set filetype=json
 ```
 
+## Criar um certificado SSL Lets Encrypt exportável
+
+```bash
+sudo certbot certonly --manual --preferred-challenges dns --email me@meudominio.com.br --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d '*.dominio.com.br'
+```
+
 > Como já proposto anteriormente, este post poderá sofer alterações.
