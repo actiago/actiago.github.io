@@ -93,6 +93,40 @@ export WORKON_HOME=$HOME/.virtualenvs
 source /home/$USER/.local/bin/virtualenvwrapper.sh
 ```
 
+## VIM
+
+Dividir a tela verticalmente e abrir outro arquivo.
+
+```:vsplit``` divide a tela
+
+```:edit /dir/file.txt``` abre o arquivo
+
+```ctrl + w + seta para direita ou esquerda``` para mudar de tela/arquivo.
+
+Navegar no texto
+
+**j** - move o cursor para a linha de baixo
+
+**k** - move o cursor para a linha de cima
+
+**h** - move o cursor um caractere a direita
+
+**l** - move o cursor um caractere a esquerda
+
+**0** - move para o início da linha
+
+**$** - move para o fim da linha
+
+**w** - move para o início da próxima palavra
+
+**b** - move para o início da palavra anterior
+
+**e** - move para o fim da próxima palavra
+
+**)** - move uma sentença a frente
+
+**}** - move um parágrafo a frente
+
 ## Arquivos de configuração
 
 Arquivo .vimrc
