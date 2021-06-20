@@ -198,4 +198,10 @@ au BufNewFile,BufRead *.tfstate set filetype=json
 sudo certbot certonly --manual --preferred-challenges dns --email me@meudominio.com.br --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d '*.dominio.com.br'
 ```
 
+## Lista arquivos duplicados com hash MD5
+
+```bash
+find . ! -empty -type f -name "*.pdf" -exec md5sum {} + | sort | uniq -w32 -dD > ~/Desktop/relatorio-duplicados.txt
+```
+
 > Como já proposto anteriormente, este post poderá sofer alterações.
