@@ -157,6 +157,12 @@ Obtém respostas e traça as rotas de uma requisição HTTP
 curl -sSIL http://172.29.0.2:5000
 ```
 
+Verifica status de disponibilidade de um recurso remoto
+
+```bash
+curl -o /dev/null --silent -Iw "%{http_code}" https://example.com/my.remote.tarball.gz
+```
+
 ## Criar um certificado SSL Lets Encrypt exportável
 
 ```bash
