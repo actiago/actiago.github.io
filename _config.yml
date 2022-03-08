@@ -6,7 +6,7 @@ title_separator: "-"
 name: "Tiago Amaral"
 logo: "/assets/images/logo.png"
 pic: "favicon.png"
-description: "Blog pessoal onde compartilho e salvo conteúdo de uso diário."
+description: "Meu bloco de anotações."
 tagline: "Sysadmin, blog, personal"
 words_per_minute: 200
 search: true
@@ -17,7 +17,7 @@ author:
    links:
      - label: "Email"
        icon: "fas fa-fw fa-envelope-square"
-       url: "me@tiag0.com.br"
+       url: "tiagoamaralc@gmail.com"
      - label: "Website"
        icon: "fas fa-fw fa-link"
        url: "https://www.tiag0.com.br"
@@ -57,5 +57,4 @@ defaults:
       read_time: true
       comments: false
 
-twitter_username: actbot3
 github_username: actiago
