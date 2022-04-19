@@ -15,11 +15,15 @@ categories: blog
 
 Remover caracteres antes de *_* no VSCode
 
+```bash
 \S*/*_
+```
 
 Para adicionar um texto no fim da linha
 
+```bash
  /*$
+```
 
 ---
 ## Rede
