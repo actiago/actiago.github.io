@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  'Keychron shorcuts'
-date:   2022-04-29 15:00:39 -0300
+date:   2022-04-28 15:00:39 -0300
 categories: blog
 ---
 
