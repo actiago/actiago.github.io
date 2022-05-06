@@ -322,12 +322,14 @@ Example:
 
 (page located at http://www.formpost.com/getthis/)
 
+```bash
 <form action="post.cgi" method="post">
 <input name=user size=10>
 <input name=pass type=password size=10>
 <input name=id type=hidden value="blablabla">
 <input name=ding value="submit">
 </form>
+```
 
 We want to enter user 'foobar' with password '12345'.
 
