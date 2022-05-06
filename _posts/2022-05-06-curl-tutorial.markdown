@@ -9,85 +9,123 @@ categories: blog
 
 For official documentation [click here](https://curl.se/docs/manual.html)
 
-Simple Usage
+## Simple Usage
 
 Get the main page from a web-server:
 
+```bash
 curl https://www.example.com/
+```
 
 Get the README file the user's home directory at funet's ftp-server:
 
+```bash
 curl ftp://ftp.funet.fi/README
+```
 
 Get a web page from a server using port 8000:
 
+```bash
 curl http://www.weirdserver.com:8000/
+```
 
 Get a directory listing of an FTP site:
 
+```bagh
 curl ftp://ftp.funet.fi
+```
 
 Get the definition of curl from a dictionary:
 
+```bash
 curl dict://dict.org/m:curl
+```
 
 Fetch two documents at once:
 
+```bash
 curl ftp://ftp.funet.fi/ http://www.weirdserver.com:8000/
+```
 
 Get a file off an FTPS server:
 
+```bash
 curl ftps://files.are.secure.com/secrets.txt
+```
 
 or use the more appropriate FTPS way to get the same file:
 
+```bash
 curl --ftp-ssl ftp://files.are.secure.com/secrets.txt
+```
 
 Get a file from an SSH server using SFTP:
 
+```bash
 curl -u username sftp://example.com/etc/issue
+```
 
 Get a file from an SSH server using SCP using a private key (not password-protected) to authenticate:
 
+```bash
 curl -u username: --key ~/.ssh/id_rsa scp://example.com/~/file.txt
+```
 
 Get a file from an SSH server using SCP using a private key (password-protected) to authenticate:
 
+```bash
 curl -u username: --key ~/.ssh/id_rsa --pass private_key_password
 scp://example.com/~/file.txt
+```
 
 Get the main page from an IPv6 web server:
 
+
+```bash
 curl "http://[2001:1890:1112:1::20]/"
+```
 
 Get a file from an SMB server:
 
+```bash
 curl -u "domain\username:passwd" smb://server.example.com/share/file.txt
+```
 
 Download to a File
 
+```bash
 Get a web page and store in a local file with a specific name:
 
+```bash
 curl -o thatpage.html http://www.example.com/
+```
 
 Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail):
 
+```bash
 curl -O http://www.example.com/index.html
+```
 
 Fetch two files and store them with their remote names:
 
+```bash
 curl -O www.haxx.se/index.html -O curl.se/download.html
+```
 
 Using Passwords
 FTP
 
 To ftp files using name+passwd, include them in the URL like:
 
+```bash
 curl ftp://name:passwd@machine.domain:port/full/path/to/file
+```
 
 or specify them with the -u flag like
 
+```bash
 curl -u name:passwd ftp://machine.domain:port/full/path/to/file
+```
 
 FTPS
 
@@ -101,11 +139,15 @@ HTTP
 
 Curl also supports user and password in HTTP URLs, thus you can pick a file like:
 
+```bash
 curl http://name:passwd@machine.domain/full/path/to/file
+```
 
 or specify user and password separately like in
 
+```bash
 curl -u name:passwd http://machine.domain/full/path/to/file
+```
 
 HTTP offers many different methods of authentication and curl supports several: Basic, Digest, NTLM and Negotiate (SPNEGO). Without telling which method to use, curl defaults to Basic. You can also ask curl to pick the most secure ones out of the ones that the server accepts for the given URL, by using --anyauth.
 
@@ -119,19 +161,27 @@ curl supports both HTTP and SOCKS proxy servers, with optional authentication. I
 
 Get an ftp file using an HTTP proxy named my-proxy that uses port 888:
 
+```bash
 curl -x my-proxy:888 ftp://ftp.leachsite.com/README
+```
 
 Get a file from an HTTP server that requires user and password, using the same proxy as above:
 
+```bash
 curl -u user:passwd -x my-proxy:888 http://www.get.this/
+```
 
 Some proxies require special authentication. Specify by using -U as above:
 
+```bash
 curl -U user:passwd -x my-proxy:888 http://www.get.this/
+```
 
 A comma-separated list of hosts and domains which do not use the proxy can be specified as:
 
+```bash
 curl --noproxy localhost,get.this -x my-proxy:888 http://www.get.this/
+```
 
 If the proxy is specified with --proxy1.0 instead of --proxy or -x, then curl will use HTTP/1.0 instead of HTTP/1.1 for any CONNECT attempts.
 
@@ -141,9 +191,11 @@ See also the environment variables Curl supports that offer further proxy contro
 
 Most FTP proxy servers are set up to appear as a normal FTP server from the client's perspective, with special commands to select the remote FTP server. curl supports the -u, -Q and --ftp-account options that can be used to set up transfers through many FTP proxies. For example, a file can be uploaded to a remote FTP server using a Blue Coat FTP proxy with the options:
 
+```bash
 curl -u "username@ftp.server Proxy-Username:Remote-Pass"
   --ftp-account Proxy-Password --upload-file local-file
   ftp://my-ftp.proxy.server:21/remote/upload/path/
+```
 
 See the manual for your FTP proxy to determine the form it expects to set up transfers, and curl's -v option to see exactly what curl is sending.
 Ranges
@@ -152,51 +204,71 @@ HTTP 1.1 introduced byte-ranges. Using this, a client can request to get only on
 
 Get the first 100 bytes of a document:
 
+```bash
 curl -r 0-99 http://www.get.this/
+```
 
 Get the last 500 bytes of a document:
 
+```bash
 curl -r -500 http://www.get.this/
+```
 
 Curl also supports simple ranges for FTP files as well. Then you can only specify start and stop position.
 
 Get the first 100 bytes of a document using FTP:
 
+```bash
 curl -r 0-99 ftp://www.get.this/README
+```
 
 Uploading
 FTP / FTPS / SFTP / SCP
 
 Upload all data on stdin to a specified server:
 
+```bash
 curl -T - ftp://ftp.upload.com/myfile
+```
 
 Upload data from a specified file, login with user and password:
 
+```bash
 curl -T uploadfile -u user:passwd ftp://ftp.upload.com/myfile
+```
 
 Upload a local file to the remote site, and use the local file name at the remote site too:
 
+```bash
 curl -T uploadfile -u user:passwd ftp://ftp.upload.com/
+```
 
 Upload a local file to get appended to the remote file:
 
+```bash
 curl -T localfile -a ftp://ftp.upload.com/remotefile
+```
 
 Curl also supports ftp upload through a proxy, but only if the proxy is configured to allow that kind of tunneling. If it does, you can run curl in a fashion similar to:
 
+```bash
 curl --proxytunnel -x proxy:port -T localfile ftp.upload.com
+```
 
 SMB / SMBS
 
+```bash
 curl -T file.txt -u "domain\username:passwd"
   smb://server.example.com/share/
+```
 
 HTTP
 
 Upload all data on stdin to a specified HTTP site:
 
+```bash
 curl -T - http://www.upload.com/myfile
+```
 
 Note that the HTTP server must have been configured to accept PUT before this can be done successfully.
 
@@ -205,11 +277,15 @@ Verbose / Debug
 
 If curl fails where it is not supposed to, if the servers do not let you in, if you cannot understand the responses: use the -v flag to get verbose fetching. Curl will output lots of info and what it sends and receives in order to let the user see all client-server interaction (but it will not show you the actual data).
 
+```bash
 curl -v ftp://ftp.upload.com/
+```
 
 To get even more details and information on what curl does, try using the --trace or --trace-ascii options with a given file name to log to, like this:
 
+```bash
 curl --trace trace.txt www.haxx.se
+```
 
 Detailed Information
 
@@ -228,7 +304,9 @@ It's easy to post data using curl. This is done using the -d <data> option. The 
 
 Post a simple "name" and "phone" guestbook.
 
+```bash
 curl -d "name=Rafael%20Sagula&phone=3320780" http://www.where.com/guest.cgi
+```
 
 How to post a form with curl, lesson #1:
 
@@ -255,40 +333,52 @@ We want to enter user 'foobar' with password '12345'.
 
 To post to this, you enter a curl command line like:
 
+```bash
 curl -d "user=foobar&pass=12345&id=blablabla&ding=submit"
   http://www.formpost.com/getthis/post.cgi
+```
 
 While -d uses the application/x-www-form-urlencoded mime-type, generally understood by CGI's and similar, curl also supports the more capable multipart/form-data type. This latter type supports things like file upload.
 
 -F accepts parameters like -F "name=contents". If you want the contents to be read from a file, use @filename as contents. When specifying a file, you can also specify the file content type by appending ;type=<mime type> to the file name. You can also post the contents of several files in one field. For example, the field name 'coolfiles' is used to send three files, with different content types using the following syntax:
 
+```bash
 curl -F "coolfiles=@fil1.gif;type=image/gif,fil2.txt,fil3.html"
   http://www.post.com/postit.cgi
+```
 
 If the content-type is not specified, curl will try to guess from the file extension (it only knows a few), or use the previously specified type (from an earlier file if several files are specified in a list) or else it will use the default type 'application/octet-stream'.
 
 Emulate a fill-in form with -F. Let's say you fill in three fields in a form. One field is a file name which to post, one field is your name and one field is a file description. We want to post the file we have written named "cooltext.txt". To let curl do the posting of this data instead of your favourite browser, you have to read the HTML source of the form page and find the names of the input fields. In our example, the input field names are 'file', 'yourname' and 'filedescription'.
 
+```bash
 curl -F "file=@cooltext.txt" -F "yourname=Daniel"
   -F "filedescription=Cool text file with cool text inside"
   http://www.post.com/postit.cgi
+```
 
 To send two files in one post you can do it in two ways:
 
 Send multiple files in a single "field" with a single field name:
 
+```bash
 curl -F "pictures=@dog.gif,cat.gif" $URL
+```
 
 Send two fields with two field names
 
+```bash
 curl -F "docpicture=@dog.gif" -F "catpicture=@cat.gif" $URL
+```
 
 To send a field value literally without interpreting a leading @ or <, or an embedded ;type=, use --form-string instead of -F. This is recommended when the value is obtained from a user or some other unpredictable source. Under these circumstances, using -F instead of --form-string could allow a user to trick curl into uploading a file.
 Referrer
 
 An HTTP request has the option to include information about which address referred it to the actual page. curl allows you to specify the referrer to be used on the command line. It is especially useful to fool or trick stupid servers or CGI scripts that rely on that information being available or contain certain data.
 
+```bash
 curl -e www.coolsite.com http://www.showme.com/
+```
 
 User Agent
 
@@ -296,7 +386,9 @@ An HTTP request has the option to include information about the browser that gen
 
 Example:
 
+```bash
 curl -A 'Mozilla/3.0 (Win95; I)' http://www.nationsbank.com/
+```
 
 Other common strings:
 
@@ -327,34 +419,47 @@ it means the server wants that first pair passed on when we get anything in a pa
 
 Example, get a page that wants my name passed in a cookie:
 
+```bash
 curl -b "name=Daniel" www.sillypage.com
+```
 
 Curl also has the ability to use previously received cookies in following sessions. If you get cookies from a server and store them in a file in a manner similar to:
 
+```bash
 curl --dump-header headers www.example.com
+```
 
 ... you can then in a second connect to that (or another) site, use the cookies from the 'headers' file like:
 
+```bash
 curl -b headers www.example.com
+```
 
 While saving headers to a file is a working way to store cookies, it is however error-prone and not the preferred way to do this. Instead, make curl save the incoming cookies using the well-known Netscape cookie format like this:
 
+```bash
 curl -c cookies.txt www.example.com
+```
 
 Note that by specifying -b you enable the "cookie awareness" and with -L you can make curl follow a location: (which often is used in combination with cookies). So that if a site sends cookies and a location, you can use a non-existing file to trigger the cookie awareness like:
 
+```bash
 curl -L -b empty.txt www.example.com
+```
 
 The file to read cookies from must be formatted using plain HTTP headers OR as Netscape's cookie file. Curl will determine what kind it is based on the file contents. In the above command, curl will parse the header and store the cookies received from www.example.com. curl will send to the server the stored cookies which match the request as it follows the location. The file "empty.txt" may be a nonexistent file.
 
 To read and write cookies from a Netscape cookie file, you can set both -b and -c to use the same file:
 
+```bash
 curl -b cookies.txt -c cookies.txt www.example.com
+```
 
 Progress Meter
 
 The progress meter exists to show a user that something actually is happening. The different fields in the output have the following meaning:
 
+```bash
 % Total    % Received % Xferd  Average Speed          Time             Curr.
                                Dload  Upload Total    Current  Left    Speed
 0  151M    0 38608    0     0   9406      0  4:41:43  0:00:04  4:41:39  9287
@@ -373,6 +478,7 @@ From left-to-right:
     Time Current - time passed since the invoke
     Time Left - expected time left to completion
     Curr.Speed - the average transfer speed the last 5 seconds (the first 5 seconds of a transfer is based on less time of course.)
+```
 
 The -# option will display a totally different progress bar that does not need much explanation!
 Speed Limit
@@ -381,25 +487,35 @@ Curl allows the user to set the transfer speed conditions that must be met to le
 
 To have curl abort the download if the speed is slower than 3000 bytes per second for 1 minute, run:
 
+```bash
 curl -Y 3000 -y 60 www.far-away-site.com
+```
 
 This can be used in combination with the overall time limit, so that the above operation must be completed in whole within 30 minutes:
 
+```bash
 curl -m 1800 -Y 3000 -y 60 www.far-away-site.com
+```
 
 Forcing curl not to transfer data faster than a given rate is also possible, which might be useful if you are using a limited bandwidth connection and you do not want your transfer to use all of it (sometimes referred to as "bandwidth throttle").
 
 Make curl transfer data no faster than 10 kilobytes per second:
 
+```bash
 curl --limit-rate 10K www.far-away-site.com
+```
 
 or
 
+```bash
 curl --limit-rate 10240 www.far-away-site.com
+```
 
 Or prevent curl from uploading data faster than 1 megabyte per second:
 
+```bash
 curl -T upload --limit-rate 1M ftp://uploadshereplease.com
+```
 
 When using the --limit-rate option, the transfer rate is regulated on a per-second basis, which will cause the total transfer speed to become lower than the given number. Sometimes of course substantially lower, if your transfer stalls during periods.
 Config File
@@ -423,7 +539,9 @@ Whitespaces ARE significant at the end of lines, but all whitespace leading up t
 
 Prevent curl from reading the default file by using -q as the first command line parameter, like:
 
+```bash
 curl -q www.thatsite.com
+```
 
 Force curl to get and display a local help page in case it is invoked without URL by making a config file similar to:
 
@@ -432,7 +550,9 @@ url = "http://help.with.curl.com/curlhelp.html"
 
 You can specify another config file to be read by using the -K/--config flag. If you set config file name to - it will read the config from stdin, which can be handy if you want to hide options from being visible in process tables etc:
 
+```bash
 echo "user = user:passwd" | curl -K - http://that.secret.site.com
+```
 
 Extra Headers
 
@@ -440,28 +560,38 @@ When using curl in your own programs, you may end up needing to pass on your own
 
 Example, send the header X-you-and-me: yes to the server when getting a page:
 
+```bash
 curl -H "X-you-and-me: yes" www.love.com
+```
 
 This can also be useful in case you want curl to send a different text in a header than it normally does. The -H header you specify then replaces the header curl would normally send. If you replace an internal header with an empty one, you prevent that header from being sent. To prevent the Host: header from being used:
 
+```bash
 curl -H "Host:" www.server.com
+```
 
 FTP and Path Names
 
 Do note that when getting files with a ftp:// URL, the given path is relative to the directory you enter. To get the file README from your home directory at your ftp site, do:
 
+```bash
 curl ftp://user:passwd@my.site.com/README
+```
 
 If you want the README file from the root directory of that same site, you need to specify the absolute file name:
 
+```bash
 curl ftp://user:passwd@my.site.com//README
+```
 
 (I.e with an extra slash in front of the file name.)
 SFTP and SCP and Path Names
 
 With sftp: and scp: URLs, the path name given is the absolute name on the server. To access a file relative to the remote user's home directory, prefix the file with /~/ , such as:
 
+```bash
 curl -u $USER sftp://home.example.com/~/.bashrc
+```
 
 FTP and Firewalls
 
@@ -469,31 +599,43 @@ The FTP protocol requires one of the involved parties to open a second connectio
 
 The default way for curl is to issue the PASV command which causes the server to open another port and await another connection performed by the client. This is good if the client is behind a firewall that does not allow incoming connections.
 
+```bash
 curl ftp.download.com
+```
 
 If the server, for example, is behind a firewall that does not allow connections on ports other than 21 (or if it just does not support the PASV command), the other way to do it is to use the PORT command and instruct the server to connect to the client on the given IP number and port (as parameters to the PORT command).
 
 The -P flag to curl supports a few different options. Your machine may have several IP-addresses and/or network interfaces and curl allows you to select which of them to use. Default address can also be used:
 
+```bash
 curl -P - ftp.download.com
+```
 
 Download with PORT but use the IP address of our le0 interface (this does not work on windows):
 
+```bash
 curl -P le0 ftp.download.com
+```
 
 Download with PORT but use 192.168.0.10 as our IP address to use:
 
+```bash
 curl -P 192.168.0.10 ftp.download.com
+```
 
 Network Interface
 
 Get a web page from a server using a specified port for the interface:
 
+```bash
 curl --interface eth0:1 http://www.example.com/
+```
 
 or
 
+```bash
 curl --interface 192.168.1.10 http://www.example.com/
+```
 
 HTTPS
 
@@ -501,19 +643,25 @@ Secure HTTP requires a TLS library to be installed and used when curl is built. 
 
 Example:
 
+```bash
 curl https://www.secure-site.com
+```
 
 curl is also capable of using client certificates to get/post files from sites that require valid certificates. The only drawback is that the certificate needs to be in PEM-format. PEM is a standard and open format to store certificates with, but it is not used by the most commonly used browsers. If you want curl to use the certificates you use with your (favourite) browser, you may need to download/compile a converter that can convert your browser's formatted certificates to PEM formatted ones.
 
 Example on how to automatically retrieve a document using a certificate with a personal password:
 
+```bash
 curl -E /path/to/cert.pem:password https://secure.site.com/
+```
 
 If you neglect to specify the password on the command line, you will be prompted for the correct password before any data can be received.
 
 Many older HTTPS servers have problems with specific SSL or TLS versions, which newer versions of OpenSSL etc use, therefore it is sometimes useful to specify what SSL-version curl should use. Use -3, -2 or -1 to specify that exact SSL version to use (for SSLv3, SSLv2 or TLSv1 respectively):
 
+```bash
 curl -2 https://secure.site.com/
+```
 
 Otherwise, curl will attempt to use a sensible TLS default version.
 Resuming File Transfers
@@ -522,15 +670,21 @@ To continue a file transfer where it was previously aborted, curl supports resum
 
 Continue downloading a document:
 
+```bash
 curl -C - -o file ftp://ftp.server.com/path/file
+```
 
 Continue uploading a document:
 
+```bash
 curl -C - -T file ftp://ftp.server.com/path/file
+```
 
 Continue downloading a document from a web server
 
+```bash
 curl -C - -o file http://www.server.com/
+```
 
 Time Conditions
 
@@ -538,33 +692,45 @@ HTTP allows a client to specify a time condition for the document it requests. I
 
 For example, you can easily make a download that only gets performed if the remote file is newer than a local copy. It would be made like:
 
+```bash
 curl -z local.html http://remote.server.com/remote.html
+```
 
 Or you can download a file only if the local file is newer than the remote one. Do this by prepending the date string with a -, as in:
 
+```bash
 curl -z -local.html http://remote.server.com/remote.html
+```
 
 You can specify a "free text" date as condition. Tell curl to only download the file if it was updated since January 12, 2012:
 
+```bash
 curl -z "Jan 12 2012" http://remote.server.com/remote.html
+```
 
 Curl will then accept a wide range of date formats. You always make the date check the other way around by prepending it with a dash (-).
 DICT
 
 For fun try
 
+```bash
 curl dict://dict.org/m:curl
 curl dict://dict.org/d:heisenbug:jargon
 curl dict://dict.org/d:daniel:gcide
+```
 
 Aliases for 'm' are 'match' and 'find', and aliases for 'd' are 'define' and 'lookup'. For example,
 
+```bash
 curl dict://dict.org/find:curl
+```
 
 Commands that break the URL description of the RFC (but not the DICT protocol) are
 
+```bash
 curl dict://dict.org/show:db
 curl dict://dict.org/show:strat
+```
 
 Authentication support is still missing
 LDAP
@@ -577,18 +743,24 @@ LDAP is a complex thing and writing an LDAP query is not an easy task. I do advi
 
 To show you an example, this is how I can get all people from my local LDAP server that has a certain sub-domain in their email address:
 
+```bash
 curl -B "ldap://ldap.frontec.se/o=frontec??sub?mail=*sth.frontec.se"
+```
 
 If I want the same info in HTML format, I can get it by not using the -B (enforce ASCII) flag.
 
 You also can use authentication when accessing LDAP catalog:
 
+```bash
 curl -u user:passwd "ldap://ldap.frontec.se/o=frontec??sub?mail=*"
 curl "ldap://user:passwd@ldap.frontec.se/o=frontec??sub?mail=*"
+```
 
 By default, if user and password are provided, OpenLDAP/WinLDAP will use basic authentication. On Windows you can control this behavior by providing one of --basic, --ntlm or --digest option in curl command line
 
+```bash
 curl --ntlm "ldap://user:passwd@ldap.frontec.se/o=frontec??sub?mail=*"
+```
 
 On Windows, if no user/password specified, auto-negotiation mechanism will be used with current logon credentials (SSPI/SPNEGO).
 Environment Variables
@@ -632,14 +804,18 @@ Curl supports kerberos4 and kerberos5/GSSAPI for FTP transfers. You need the ker
 
 First, get the krb-ticket the normal way, like with the kinit/kauth tool. Then use curl in way similar to:
 
+```bash
 curl --krb private ftp://krb4site.com -u username:fakepwd
+```
 
 There is no use for a password on the -u switch, but a blank one will make curl ask for one and you already entered the real password to kinit/kauth.
 TELNET
 
 The curl telnet support is basic and easy to use. Curl passes all data passed to it on stdin to the remote server. Connect to a remote telnet server using a command line similar to:
 
+```bash
 curl telnet://remote.server.com
+```
 
 And enter the data to pass to the server on stdin. The result will be sent to stdout or to the file you specify with -o.
 
@@ -647,7 +823,9 @@ You might want the -N/--no-buffer option to switch off the buffered output for s
 
 Pass options to the telnet protocol negotiation, by using the -t option. To tell the server we use a vt100 terminal, try something like:
 
+```bash
 curl -tTTYPE=vt100 telnet://remote.server.com
+```
 
 Other interesting options for it -t include:
 
@@ -668,20 +846,28 @@ As is mentioned above, you can download multiple files with one command line by 
 
 For example: get two files and use -O for the first and a custom file name for the second:
 
+```bash
 curl -O http://url.com/file.txt ftp://ftp.com/moo.exe -o moo.jpg
+```
 
 You can also upload multiple files in a similar fashion:
 
+```bash
 curl -T local1 ftp://ftp.com/moo.exe -T local2 ftp://ftp.com/moo2.txt
+```
 
 IPv6
 
 curl will connect to a server with IPv6 when a host lookup returns an IPv6 address and fall back to IPv4 if the connection fails. The --ipv4 and --ipv6 options can specify which address to use when both are available. IPv6 addresses can also be specified directly in URLs using the syntax:
 
+```bash
 http://[2001:1890:1112:1::20]/overview.html
+```
 
 When this style is used, the -g option must be given to stop curl from interpreting the square brackets as special globbing characters. Link local and site local addresses including a scope identifier, such as fe80::1234%1, may also be used, but the scope portion must be numeric or match an existing network interface on Linux and the percent character must be URL escaped. The previous example in an SFTP URL might look like:
 
+```bash
 sftp://[fe80::1234%251]/
+```
 
 IPv6 addresses provided other than in URLs (e.g. to the --proxy, --interface or --ftp-port options) should not be URL encoded.
