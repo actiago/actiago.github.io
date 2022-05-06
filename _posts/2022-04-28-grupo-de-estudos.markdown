@@ -7,7 +7,7 @@ categories: blog
 
 # Grupo de estudos sobre tecnologias em tendência
 
-**O objetivo do grupo é preparar o trabalhador para o mercado de trabalho e manter os boletos pagos em dia***
+O objetivo do grupo é fazer com que os membros sejam capazes de realizar tarefas de infraestrutura em ambientes híbridos através de IaC, criar produtos e stacks completas de forma clara e simplificada.
 
 ### Pontos a definir
 
@@ -26,4 +26,5 @@ categories: blog
 - Terraform
 - Kubernetes
 - Arquitetura de infra e software
+- Observabilidade
 
