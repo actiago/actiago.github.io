@@ -316,7 +316,7 @@ If there is a "normal" post, you use -d to post. -d takes a full "post string", 
 
 _variable1_=_data1_&_variable2_=_data2_&...
 
-The 'variable' names are the names set with "name=" in the <input> tags, and the data is the contents you want to fill in for the inputs. The data must be properly URL encoded. That means you replace space with + and that you replace weird letters with %XX where XX is the hexadecimal representation of the letter's ASCII code.
+The 'variable' names are the names set with "name=" in the _input_ tags, and the data is the contents you want to fill in for the inputs. The data must be properly URL encoded. That means you replace space with + and that you replace weird letters with %XX where XX is the hexadecimal representation of the letter's ASCII code.
 
 Example:
 
