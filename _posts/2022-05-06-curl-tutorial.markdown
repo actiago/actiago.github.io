@@ -310,11 +310,11 @@ curl -d "name=Rafael%20Sagula&phone=3320780" http://www.where.com/guest.cgi
 
 How to post a form with curl, lesson #1:
 
-Dig out all the <input> tags in the form that you want to fill in.
+Dig out all the _input_ tags in the form that you want to fill in.
 
 If there is a "normal" post, you use -d to post. -d takes a full "post string", which is in the format
 
-<variable1>=<data1>&<variable2>=<data2>&...
+_variable1_=_data1_&_variable2_=_data2_&...
 
 The 'variable' names are the names set with "name=" in the <input> tags, and the data is the contents you want to fill in for the inputs. The data must be properly URL encoded. That means you replace space with + and that you replace weird letters with %XX where XX is the hexadecimal representation of the letter's ASCII code.
 
