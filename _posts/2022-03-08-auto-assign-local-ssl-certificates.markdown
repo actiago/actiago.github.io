@@ -7,49 +7,45 @@ categories: blog
 
 # Gerando certificados autoassinados a partir de um CA local
 
-*Cenário*: Seu ambiente contém uma unidade certificadora baseada no domínio local
-
-*contoso.local* e você precisa fazer com que suas aplicações distribuídas através deste
-
-ambiente sejam assinadas/validadas a partir deste. Ex: *HTTPS://*_app-rh.contoso.local_.
+**Cenário**: Seu ambiente contém uma unidade certificadora baseada no domínio local *contoso.local* e você precisa fazer com que suas aplicações distribuídas através deste ambiente sejam assinadas/validadas a partir deste. Ex: **HTTPS://**_app-rh.contoso.local_.
 
 ## Passos para aplicação do certificado em uma stack de homologação
 
-*Objeto principal*: certificado RootCA no formato _.pfx_.
-*Objetivo*: Exportar uma chave privada (_.key_) e um certificado (_.crt_) a partir do certificado *RootCA*.
+**Objeto principal**: certificado RootCA no formato _.pfx_.
+**Objetivo**: Exportar uma chave privada (_.key_) e um certificado (_.crt_) a partir do certificado **RootCA**.
 
 Documentação de referência: https://www.ibm.com/docs/en/arl/9.7?topic=certification-extracting-certificate-keys-from-pfx-file
 
-1. Exportar as chaves
+### Exportar as chaves
 
-a. Exportar a chave privada a partir do *RootCA*
+a. Exportar a chave privada a partir do **RootCA**
     * A senha do certificado será solicitada
 
 ```bash
 openssl pkcs12 -in [yourfile.pfx] -nocerts -out [drlive.key]
 ```
 
-b. Exportar o certificado a partir do *RootCA*
+b. Exportar o certificado a partir do **RootCA**
     * A senha de exportação será solicitada
 
 ```bash
 openssl pkcs12 -in [yourfile.pfx] -clcerts -nokeys -out [drlive.crt]
 ```
 
-2. Exportar uma chave privada sem senha
+### Exportar uma chave privada sem senha
 
 ```bash
 openssl rsa -in [original.key] -out [private.key]
 ```
 
-3. Gerando um certificado CSR (Certificate Signing Request)
+### Gerando um certificado CSR (Certificate Signing Request)
     * Preencha os dados solicitados
 
 ```bash
 openssl req -new -key private.key -out request.csr
 ```
 
-4. Criando um certificado auto assinado (CRT) assinado pelo *RootCA*
+### Criando um certificado auto assinado (CRT) assinado pelo **RootCA**
 
 a. Crie um arquivo de nome _extfile.cnf_ e adicione os subdomínios que deseja assinar conforme o exemplo a seguir:
 
