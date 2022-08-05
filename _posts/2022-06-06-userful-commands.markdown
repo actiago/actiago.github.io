@@ -22,7 +22,7 @@ Remover caracteres antes de *_* no VSCode
 Para adicionar um texto no fim da linha
 
 ```bash
- /*$
+/*$
 ```
 
 ---
@@ -149,6 +149,12 @@ Lista tamanho do diretório classificando do menor para o maior
 du -hsc * | sort -h
 ```
 
+Lista arquivos duplicados com hash MD5
+
+```bash
+find . ! -empty -type f -name "*.pdf" -exec md5sum {} + | sort | uniq -w32 -dD > ~/Desktop/relatorio-duplicados.txt
+```
+
 ---
 
 ## HTTP
@@ -177,16 +183,16 @@ Obtém respostas e traça as rotas de uma requisição HTTP
 curl -sSIL http://172.29.0.2:5000
 ```
 
+Acompanha os redirecionamentos
+
+```bash
+curl -s -L -D - http://site.com.br/ -o /dev/null -w '%{url_effective}'
+```
+
 Verifica status de disponibilidade de um recurso remoto
 
 ```bash
 curl -o /dev/null --silent -Iw "%{http_code}" https://example.com/my.remote.tarball.gz
-```
-
-Lista arquivos duplicados com hash MD5
-
-```bash
-find . ! -empty -type f -name "*.pdf" -exec md5sum {} + | sort | uniq -w32 -dD > ~/Desktop/relatorio-duplicados.txt
 ```
 
 ---
