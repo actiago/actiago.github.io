@@ -12,11 +12,12 @@ categories: blog
 ## Passos para aplicação do certificado em uma stack de homologação
 
 **Objeto principal**: certificado RootCA no formato _.pfx_.
+
 **Objetivo**: Exportar uma chave privada (_.key_) e um certificado (_.crt_) a partir do certificado **RootCA**.
 
 Documentação de referência: https://www.ibm.com/docs/en/arl/9.7?topic=certification-extracting-certificate-keys-from-pfx-file
 
-### Exportar as chaves
+### 1) Exportar as chaves
 
 a. Exportar a chave privada a partir do **RootCA**
     * A senha do certificado será solicitada
@@ -32,20 +33,20 @@ b. Exportar o certificado a partir do **RootCA**
 openssl pkcs12 -in [yourfile.pfx] -clcerts -nokeys -out [drlive.crt]
 ```
 
-### Exportar uma chave privada sem senha
+### 2) Exportar uma chave privada sem senha
 
 ```bash
 openssl rsa -in [original.key] -out [private.key]
 ```
 
-### Gerando um certificado CSR (Certificate Signing Request)
+### 3) Gerando um certificado CSR (Certificate Signing Request)
     * Preencha os dados solicitados
 
 ```bash
 openssl req -new -key private.key -out request.csr
 ```
 
-### Criando um certificado auto assinado (CRT) assinado pelo **RootCA**
+### 4) Criando um certificado auto assinado (CRT) assinado pelo **RootCA**
 
 a. Crie um arquivo de nome _extfile.cnf_ e adicione os subdomínios que deseja assinar conforme o exemplo a seguir:
 
