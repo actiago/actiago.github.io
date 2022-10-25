@@ -12,7 +12,7 @@ Link to Reddit post [here](https://www.reddit.com/r/Keychron/comments/lrr970/lis
 ---
 
 Command | Function
---- | ---:
+--- | ---
 | FN + B | battery level (RGB versions - if the power above 70%, the charging indicator is green; 30%~70 %, the charging indicator will be blue; when it is under 30%, the charging indicator will keep flashing.)
 | FN + + | faster leds
 | FN + - | slower leds
