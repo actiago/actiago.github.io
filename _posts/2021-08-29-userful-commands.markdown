@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  'Comandos e Utilitários'
-date:   2022-10-24 15:00:39 -0300
+date:   2021-08-29 15:00:39 -0300
 categories: blog
 ---
 
@@ -22,7 +22,7 @@ Remover caracteres antes de *_* no VSCode
 Para adicionar um texto no fim da linha
 
 ```bash
-/*$
+ /*$
 ```
 
 ---
@@ -44,12 +44,6 @@ Verificar portas TCP com _curl_ ao invés do _telnet_.
 
 ```bash
 curl -v telnet://127.0.0.1:80
-```
-
-Lista redes Wi-Fi disponíveis
-
-```bash
-nmcli -f ALL dev wifi
 ```
 
 ### **Exemplos com o comando ss**
@@ -155,12 +149,6 @@ Lista tamanho do diretório classificando do menor para o maior
 du -hsc * | sort -h
 ```
 
-Lista arquivos duplicados com hash MD5
-
-```bash
-find . ! -empty -type f -name "*.pdf" -exec md5sum {} + | sort | uniq -w32 -dD > ~/Desktop/relatorio-duplicados.txt
-```
-
 ---
 
 ## HTTP
@@ -189,42 +177,27 @@ Obtém respostas e traça as rotas de uma requisição HTTP
 curl -sSIL http://172.29.0.2:5000
 ```
 
-Acompanha os redirecionamentos
-
-```bash
-curl -s -L -D - http://site.com.br/ -o /dev/null -w '%{url_effective}'
-```
-
 Verifica status de disponibilidade de um recurso remoto
 
 ```bash
 curl -o /dev/null --silent -Iw "%{http_code}" https://example.com/my.remote.tarball.gz
 ```
 
+Lista arquivos duplicados com hash MD5
+
+```bash
+find . ! -empty -type f -name "*.pdf" -exec md5sum {} + | sort | uniq -w32 -dD > ~/Desktop/relatorio-duplicados.txt
+```
+
 ---
 
-## SSL
+## Certificado SSL
 
 Criar um certificado SSL Lets Encrypt exportável
 
 ```bash
 sudo certbot certonly --manual --preferred-challenges dns --email me@meudominio.com.br --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d '*.dominio.com.br'
 ```
-
-> Obs: O comando acima gera um certificado _wildcard_
-
-Obtém informações de um certificado em um determinado host
-
-```bash
-openssl s_client -connect site.com.br:443 </dev/null
-```
-
-Lista os certificados
-
-```bash
-openssl s_client -connect site.com.br:443 -showcerts </dev/null
-```
-
 
 ---
 ## VIM - Navegação
@@ -260,18 +233,3 @@ Navegar no texto
 **)** - move uma sentença a frente
 
 **}** - move um parágrafo a frente
-
----
-## Powershell
-
-Encontrar meu IP público via powershell
-
-```powershell
-nslookup myip.opendns.com resolver1.opendns.com
-```
-
-Obtém IPs e nome das interfaces
-
-```
-Get-NetIpAddress | Select-Object InterfaceAlias,IPAddress,AddressFamily | Format-Table
-```
