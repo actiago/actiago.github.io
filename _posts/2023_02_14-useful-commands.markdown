@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  'Comandos e Utilitários'
-date:   2023-02-15 15:00:39 -0300
+date:   2023-02-14 15:00:39 -0300
 categories: blog
 ---
 
