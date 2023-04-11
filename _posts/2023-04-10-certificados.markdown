@@ -9,6 +9,8 @@ categories: blog
 
 Processo para gerar certificados privados partindo do zero.
 
+Para acessar o repositório contendo os scripts **[clique aqui](https://github.com/actiago/certificados)**
+
 ## Sumário
 
 ID | Nome
