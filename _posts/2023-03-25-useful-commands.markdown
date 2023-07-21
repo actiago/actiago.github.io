@@ -205,6 +205,13 @@ Criar um certificado SSL Lets Encrypt exportável
 sudo certbot certonly --manual --preferred-challenges dns --email me@meudominio.com.br --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d '*.dominio.com.br'
 ```
 
+Verificar expiration date
+
+```bash
+read -p "Digite a URL: " URL
+openssl s_client -connect "$URL":/443 < /dev/null 2>/dev/null | awk 'BEGIN/,/END CER/ { print $0}' | openssl x509 -startdae -enddate -noout
+```
+
 ---
 ## VIM - Navegação
 
