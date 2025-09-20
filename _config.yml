@@ -1,33 +1,17 @@
 url: 'https://blog.tiag0.com.br'
-title: Tiago Amaral
+title: Blog | Tiago Amaral
 author: actiago
 search: true
 # email: your-email@domain.com
-description: Blog pessoal
+description: Bloco de notas rápidas para consulta e outras cositas más.
 
 lang: "pt-BR"
 timezone: "America/Sao_Paulo"
 
 # social links
-# twitter_username: jekyllrb
 github_username: actiago
 rss: rss
-# dribbble_username: jekyll
-# facebook_username: jekyll
-# flickr_username: jekyll
-# instagram_username: jekyll
-# linkedin_username: jekyll
-# pinterest_username: jekyll
-# youtube_username: jekyll
-# googleplus_username: +jekyll
-
-# Mastodon instances
-# mastodon:
-# - username: jekyll
-#   instance: example.com
-# - username: jekyll2
-#   instance: example.com
-
+linkedin_username: ac-tiago
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
