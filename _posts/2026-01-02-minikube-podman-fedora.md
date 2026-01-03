@@ -9,8 +9,8 @@ categories: blog
 
 # **Instalando Minikube com Podman e CRI-O no Fedora 43**
 
-<div style="text-align: right">
-Recentemente reinstalei o sistema operacional em meu modesto computador de estudos, fiquei um bom tempo utilizando o Ferora 40 workstation e resolvi mudar para a versão Server mais recente. Com esse movimento, eu precisava voltar a stack anterior de estudos do Kuberbetes, nela utilizo o **Minikube** integrado ao **Podman**, utilizando o runtime **CRI-O** e a rede **Calico**. Em um outro momento irei escrever sobre as motivações da escolha destes componentes.
+<div style="text-align: justify">
+Recentemente reinstalei o sistema operacional em meu modesto computador de estudos, fiquei um bom tempo utilizando o Ferora 40 workstation e resolvi mudar para a versão Server mais recente. Com esse movimento, eu precisava voltar a stack anterior de estudos do Kuberbetes, nela utilizo o Minikube integrado ao Podman, utilizando o runtime CRI-O e a rede Calico. Em um outro momento irei escrever sobre as motivações da escolha destes componentes.
 </div>
 
 * * * 
