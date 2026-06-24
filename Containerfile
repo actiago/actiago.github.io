@@ -1,21 +1,23 @@
-FROM ruby:3.2
+FROM ruby:3.2-slim
 
-# Instala dependências do sistema
+# Instala dependências do sistema (apenas o essencial para Jekyll)
 RUN apt-get update && apt-get install -y \
   build-essential \
   libffi-dev \
-  nodejs \
-  npm \
   && rm -rf /var/lib/apt/lists/*
 
 # Cria diretório de trabalho
 WORKDIR /srv/jekyll
 
 # Copia os arquivos do projeto
-COPY . .
+COPY Gemfile Gemfile.lock* ./
 
 # Instala as gems
 RUN gem install bundler && bundle install
+
+# Copia o restante do projeto
+COPY . .
+
 # Expõe a porta padrão do Jekyll
 EXPOSE 4000
 

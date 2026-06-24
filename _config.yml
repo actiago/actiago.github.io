@@ -2,7 +2,6 @@ url: 'https://blog.tiag0.com.br'
 title: Blog | Tiago Amaral
 author: actiago
 search: true
-# email: your-email@domain.com
 description: Bloco de notas rápidas para consulta e outras cositas más.
 
 lang: "pt-BR"
@@ -13,21 +12,21 @@ github_username: actiago
 rss: rss
 linkedin_username: ac-tiago
 
-show_excerpts: false # set to true to show excerpts on the homepage
+show_excerpts: false
 
 # Minima date format
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
   date_format: "%b %-d, %Y"
 
-# If you want to link only specific pages in your header, uncomment
-# this and add the path to the pages in order as they should show up
-#header_pages:
-# - about.html
-
 # Build settings
-theme: minima
+# theme: minima  # removido — agora usamos layout próprio
 
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+
+# Exclude assets from being processed by Jekyll
+exclude:
+  - Containerfile
+  - README.md
+  - script/
