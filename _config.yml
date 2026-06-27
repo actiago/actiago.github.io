@@ -1,32 +1,39 @@
 url: 'https://blog.tiag0.com.br'
 title: Blog | Tiago Amaral
-author: actiago
+author:
+  name: Tiago Amaral
+  email: actiago@duck.com
 search: true
 description: Bloco de notas rápidas para consulta e outras cositas más.
 
 lang: "pt-BR"
 timezone: "America/Sao_Paulo"
 
-# social links
-github_username: actiago
-rss: rss
-linkedin_username: ac-tiago
-
-show_excerpts: false
-
-# Minima date format
-minima:
-  date_format: "%b %-d, %Y"
-
 # Build settings
-# theme: minima  # removido — agora usamos layout próprio
+markdown: kramdown
 
 plugins:
- - jekyll-feed
- - jekyll-seo-tag
+  - jemoji
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 
-# Exclude assets from being processed by Jekyll
+collections_dir: all_collections
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: "post"
+      permalink: /posts/:title/
+
 exclude:
   - Containerfile
   - README.md
   - script/
+  - sitemap.xml
+  - feed.xml
+  - LICENSE

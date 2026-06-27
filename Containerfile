@@ -1,4 +1,4 @@
-FROM ruby:3.2-slim
+FROM docker.io/ruby:3.2-slim
 
 # Instala dependências do sistema (apenas o essencial para Jekyll)
 RUN apt-get update && apt-get install -y \
