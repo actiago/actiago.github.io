@@ -4,18 +4,22 @@ title: Sobre
 permalink: /about/
 ---
 
-Olá, sou o Tiago Amaral, sou analista cloud e, nas horas vagas, gosto de explorar outros temas interessantes que somam na minha forma de observar o mundo.
+Olá, sou o **Tiago Amaral** — Cloud & IAM Analyst com experiência em ambientes multi-cloud, segurança da informação e automação de processos.
 
-Este espaço é meu bloco de anotações, onde compartilho experiências, aprendizados ligados a tecnologia — e, às vezes, da vida também.
+Atualmente atuo no ciclo de vida de usuários em AWS, Azure e on-premises, aplicando políticas baseadas em NIST, PCI DSS e ISO 27001, além de configurar integrações SSO e gerenciar acesso privilegiado (PAM).
 
 ### 🚀 Especialidades
 
-- **Cloud Computing** — AWS, GCP, Azure
-- **Kubernetes & Containers** — EKS, GKE, OpenShift, Docker
-- **Infraestrutura como Código** — Terraform, Ansible, CloudFormation
-- **CI/CD & Automação** — Jenkins, GitLab CI, GitHub Actions, ArgoCD
-- **Observabilidade** — Prometheus, Grafana, ELK Stack, Datadog
-- **Linux & Redes** — Administração de servidores, hardening, troubleshooting
+- **Cloud Computing** — AWS, Azure
+- **Infraestrutura como Código** — Terraform, Ansible
+- **CI/CD & Automação** — GitLab CI, Python, Bash, PowerShell
+- **IAM & Segurança** — AWS IAM, Azure Entra ID, Active Directory, PAM, PCI DSS 4.0.1
+- **Observabilidade** — OpenSearch, Zabbix, CloudWatch, PagerDuty
+- **Linux & Windows Server** — Administração, hardening, troubleshooting
+
+### 🏆 Destaque
+
+Liderança na implementação e renovação da certificação **PCI DSS 4.0.1**, coordenando times internos e fornecedores, automatizando controles e coleta de evidências, garantindo a conformidade contínua da empresa.
 
 ### 📚 Sobre o blog
 
