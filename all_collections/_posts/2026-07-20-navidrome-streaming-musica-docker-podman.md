@@ -11,6 +11,7 @@ categories: blog
 
 <div style="text-align: justify">
 Cansado de depender de serviços de streaming que removem músicas do catálogo, exigem assinatura mensal ou simplesmente não têm aquela faixa obscura que você tanto ama? O <strong>Navidrome</strong> é a resposta. É um servidor de música moderno, leve e open-source, compatível com a API Subsonic — o que significa que você pode usar qualquer cliente Subsonic (Sonixd, Tempo, Sublime Music, etc.) para ouvir sua própria coleção de qualquer lugar.
+
 Minha intenção pessoal foi um pouco além, a primeira foi a questão de removerem alguns álbuns do catálogo, acredito que por algum tipo de problema judicial ou algo relacionado a distribuição. O outro ponto está ligado a qualidade da música que consumimos, o formato que o Spotify entrega é compactado e voltado a entrega da música em si. O que eu busco é voltar a ouvir com qualidade, mesmo que com menor número de discos em minha coleção, por isso eu busco baixar e comprar discos no formato FLAC, com uma rápida busca você verá que este formato é muito superior ao mp3 de 320kbps por exemplo.
 A primeira coisa que fiz ao utilizar a stack foi testar o disco Bad do Michael Jackson, a diferença entre o música entregue no streaming e no formato FLAC é absurda, fiz o mesmo teste com discos de metal e a entrega é gritante quando esperamos compreender toda o trabalho que o artista teve para produzir sua obra.
 </div>
