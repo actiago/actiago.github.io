@@ -315,4 +315,12 @@ feat!: mudança que quebra compatibilidade
 
 * * *
 
-No próximo artigo da série, vamos explorar **fluxos de desenvolvimento com Git** — Git Flow, GitHub Flow e Trunk-based Development. Até lá!
+## **Próximos Artigos da Série**
+
+Este é o primeiro artigo de uma série sobre Git e boas práticas de desenvolvimento. Confira os próximos:
+
+1. ✅ **Conventional Commits** — padrão para mensagens de commit (você está aqui)
+2. ➡️ **Nomenclatura de Branches** — como nomear branches de forma consistente
+3. ➡️ **Fluxos de Desenvolvimento** — Git Flow, GitHub Flow, Trunk-based e mais
+
+Até lá!
