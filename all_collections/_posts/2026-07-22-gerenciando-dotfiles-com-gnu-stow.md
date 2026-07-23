@@ -204,34 +204,7 @@ Cada diretório no repositório corresponde a uma ferramenta. Isso permite insta
 ./install.sh bash git zsh alacritty
 ```
 
-### **2. Use includeIf para configurações condicionais**
-
-No git, você pode usar `includeIf` para ter configurações diferentes por diretório:
-
-```ini
-[user]
-    name = Tiago Amaral
-    email = tiagoamaralc@gmail.com
-
-[includeIf "gitdir:~/projetos/github/"]
-    path = ~/.gitconfig-github
-
-[includeIf "gitdir:~/projetos/gitlab/"]
-    path = ~/.gitconfig-gitlab
-```
-
-Isso permite ter um `.gitconfig` principal e configurações específicas para GitHub, GitLab, trabalho, etc.
-
-### **3. Versionamento Semântico**
-
-Use tags para marcar versões estáveis do seu conjunto de dotfiles:
-
-```bash
-git tag v1.0.0
-git push --tags
-```
-
-### **4. Teste em uma máquina nova**
+### **2. Teste em uma máquina nova**
 
 A melhor forma de validar seu setup é clonar o repositório em uma máquina nova e executar o install.sh. Se funcionar, está pronto.
 
